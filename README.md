@@ -12,7 +12,7 @@
  ``` python 
 if form_name == 'form_name_here':
 
-	    if Login_Form.validate_on_submit():
+	    if form_name_here.validate_on_submit():
 ```
 
  
