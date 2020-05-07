@@ -5,7 +5,7 @@
 
  - form must include this line : 
 
-`<input type="hidden" name="form-name" value="Exchange_Form">`
+`<input type="hidden" name="form-name" value="form_name_here">`
 
  
 
