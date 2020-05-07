@@ -1,12 +1,17 @@
 {% extends 'layout.html' %}
 {% block content%}
-    ez a  pass_this_value from route/home: {{ pass_this_value }}
-    method : {{ my_method }}
-    form_name : {{ form_name }}
-    innet : {{ innet }}
+<div class="border border-danger">
+    <p> this is  pass_this_value from route/home: {{ pass_this_value }} </p>
+    <p> method : {{ my_method }} </p>
+    <p> form_name : {{ form_name }} </p>
+    <p> innet : {{ innet }} </p>
+    <p> result_from_frankfurt : {{ result_from_frankfurt }} </p>
+</div>
+
+
 <div class="row">
-    <div class="col-md-6">
-        form_1
+    <div class="col-md-6 border border-danger">
+        <div class="border-bottom pb-2 pt-2">form_1</div>
         <form method="POST" action="">
             {{ Exchange_Form.hidden_tag() }}
             <input type="hidden" name="form-name" value="Exchange_Form">
@@ -71,8 +76,8 @@
         </form>
     </div>
 
-    <div class="col-md-6">
-        form_2
+    <div class="col-md-6 border border-danger">
+        <div class="border-bottom pb-2 pt-2">form_2</div>
         <form method="POST" action="">
             {{ Login_Form.hidden_tag() }}
             <input type="hidden" name="form-name" value="Login_Form">
