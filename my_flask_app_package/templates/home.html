@@ -1,0 +1,106 @@
+{% extends 'layout.html' %}
+{% block content%}
+    ez a  pass_this_value from route/home: {{ pass_this_value }}
+    method : {{ my_method }}
+    form_name : {{ form_name }}
+    innet : {{ innet }}
+<div class="row">
+    <div class="col-md-6">
+        form_1
+        <form method="POST" action="">
+            {{ Exchange_Form.hidden_tag() }}
+            <input type="hidden" name="form-name" value="Exchange_Form">
+
+
+            <div class="col-md-12">
+            {{ Exchange_Form.Currency_quantity.label }}
+            {% if Exchange_Form.Currency_quantity.errors %}
+                {{ Exchange_Form.Currency_quantity(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in Exchange_Form.Currency_quantity.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+
+            {% else %}
+                {{ Exchange_Form.Currency_quantity(class="col-md-2") }}
+
+            {% endif %}
+            </div>
+
+            <div class="col-md-12">
+            {{ Exchange_Form.Currency_from.label }}
+
+            {% if Exchange_Form.Currency_from.errors %}
+                {{ Exchange_Form.Currency_from(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in Exchange_Form.Currency_from.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+
+            {% else %}
+                {{ Exchange_Form.Currency_from(class="col-md-2") }}
+
+            {% endif %}
+            </div>
+
+            <div class="col-md-12">
+            {{ Exchange_Form.Currency_to.label }}
+
+            {% if Exchange_Form.Currency_to.errors %}
+                {{ Exchange_Form.Currency_to(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in Exchange_Form.Currency_to.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+
+            {% else %}
+                {{ Exchange_Form.Currency_to(class="col-md-2") }}
+
+            {% endif %}
+
+
+
+            </div>
+
+            <div class="col-md-12">
+            {{ Exchange_Form.Currency_submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        form_2
+        <form method="POST" action="">
+            {{ Login_Form.hidden_tag() }}
+            <input type="hidden" name="form-name" value="Login_Form">
+
+
+            <div class="col-md-12">
+                {{ Login_Form.Username.label }}
+
+                {% if Login_Form.Username.errors %}
+                {{ Login_Form.Username(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in Login_Form.Username.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+
+                {% else %}
+                    {{ Login_Form.Username(class="col-md-2") }}
+                {% endif %}
+
+            </div>
+
+            <div class="col-md-12">
+            {{ Login_Form.Submit_login(class="btn btn-outline-info") }}
+            </div>
+        </form>
+
+
+    </div>
+</div>
+{% endblock content%}
