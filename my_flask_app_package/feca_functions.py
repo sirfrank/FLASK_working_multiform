@@ -1,2 +1,1 @@
-def five(x):
-    return x*5
+# my_functions comes here
