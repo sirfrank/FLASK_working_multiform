@@ -10,11 +10,13 @@
  - form validalas route-on 
 
  ``` python 
- Form_1 = Form1()
- Form_2 = Form2()
-if form_name == 'my_form_name_here':
-
-	    if my_form_name_here.validate_on_submit():
+Form_1 = Form1()
+Form_2 = Form2()
+if request.method == 'POST':
+	if Form_1.validate_on_submit():
+		#dothis
+	if Form_2.validate_on_submit():
+		#dothis
 ```
 
  
