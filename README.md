@@ -10,15 +10,19 @@
  - form validalas route-on 
 
  ``` python 
-Form_1 = Form1()
-Form_2 = Form2()
-if request.method == 'POST':
-	if Form_1.validate_on_submit():
-		#dothis
-	if Form_2.validate_on_submit():
-		#dothis
-```
-
  
+Exchange_Form = ExchangeForm()
+Login_Form = LoginForm()
+
+    if request.method == 'POST':
+        form_name = request.form['form-name']
+	
+        if form_name == 'Login_Form':
+            if Login_Form.validate_on_submit():
+                #dothis
+        if form_name == 'Exchange_Form':
+            if Exchange_Form.validate_on_submit():
+	    	#dothis
+
 
 
